@@ -20,11 +20,21 @@ func _ready() -> void:
 	#print(state_cells)
 	pass # Replace with function body.
 
+func change_state_cell(coords: Vector2i):
+	var cell_atlas_coords = get_cell_atlas_coords(coords)
+	var state = get_cell_source_id(coords)
+	match state:
+		0:
+			set_cell(coords,1,cell_atlas_coords)
+		1:
+			set_cell(coords,1,cell_atlas_coords)
+		2:
+			set_cell(coords,0,cell_atlas_coords)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#for i in range(5):
-		#for j in range(5):
-			#if state_cells[i][j] == state.VERDE:
-				#set_cell(Vector2i(i,j),0,Vector2i(1,9))
+	var position_mouse_map = local_to_map(get_global_mouse_position())
+	if position_mouse_map >= Vector2i.ZERO:
+		if get_cell_source_id(position_mouse_map) == 0:
+			
 	pass
