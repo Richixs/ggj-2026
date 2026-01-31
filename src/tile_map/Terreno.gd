@@ -23,6 +23,11 @@ func change_state_cell(position: Vector2):
 		2:
 			set_cell(coords,0,cell_atlas_coords)
 
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Basic Action"):
+		change_state_cell(get_global_mouse_position())
+
 	pass
