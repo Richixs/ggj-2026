@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btb8fjov6wp1o"]
 
-[ext_resource type="Script" uid="uid://bpntthky2pt5f" path="res://src/player/Player.gd" id="1_wr5hl"]
+[ext_resource type="Script" uid="uid://bpntthky2pt5f" path="res://src/entity/ActiveEntity/entities/Player.gd" id="1_wr5hl"]
 [ext_resource type="Texture2D" uid="uid://dgg03dfbj8wdh" path="res://assets/player/jaguar.jpeg" id="2_gfjak"]
 [ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="3_524rm"]
 [ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="4_tpg5x"]
@@ -24,6 +24,7 @@ metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
 [node name="Player" type="CharacterBody2D" unique_id=1528831046]
 script = ExtResource("1_wr5hl")
+speed = 500.0
 entity_name = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1553075673]
@@ -38,3 +39,5 @@ sprite_frames = SubResource("SpriteFrames_4kuee")
 script = ExtResource("3_524rm")
 data = SubResource("Resource_c3xxp")
 metadata/_custom_type_script = "uid://lf17lkdjf8wx"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1029839155]
