@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://7xajy1o7fdss"]
+
+[node name="Braza" type="TileMapLayer" unique_id=1468513494]
+modulate = Color(2.0696223e-06, 0.9097405, 7.70092e-07, 1)
