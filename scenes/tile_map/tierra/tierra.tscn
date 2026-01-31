@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://qv58forv12dq"]
 
+[ext_resource type="Script" uid="uid://cq5xmx7pa3kkw" path="res://src/tile_map/tierra/tierra.gd" id="1_bth7w"]
+
 [node name="Tierra" type="TileMapLayer" unique_id=422272240]
+script = ExtResource("1_bth7w")
