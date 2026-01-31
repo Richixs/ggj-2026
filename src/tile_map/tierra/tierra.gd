@@ -27,14 +27,16 @@ func change_state_cell(coords: Vector2i):
 		0:
 			set_cell(coords,1,cell_atlas_coords)
 		1:
-			set_cell(coords,1,cell_atlas_coords)
+			set_cell(coords,2,cell_atlas_coords)
 		2:
 			set_cell(coords,0,cell_atlas_coords)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var position_mouse_map = local_to_map(get_global_mouse_position())
-	if position_mouse_map >= Vector2i.ZERO:
-		if get_cell_source_id(position_mouse_map) == 0:
-			
+	if Input.is_action_just_pressed("Basic Action"):
+		change_state_cell(local_to_map(get_global_mouse_position()))
+	#var position_mouse_map = local_to_map(get_global_mouse_position())
+	#if position_mouse_map >= Vector2i.ZERO:
+		#if get_cell_source_id(position_mouse_map) == 0:
+			#
 	pass
