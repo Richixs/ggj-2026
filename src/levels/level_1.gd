@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var cantidad_arboles :int = 20
-@export var distance_borrow : int = 200
+@export var cantidad_arboles :int = 5
+@export var distance_borrow : int = 500
 
 var random := RandomNumberGenerator.new()
 var tree = preload("res://scenes/passive-entities/tree/tree.tscn")
