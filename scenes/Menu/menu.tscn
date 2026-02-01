@@ -1,14 +1,23 @@
 [gd_scene format=3 uid="uid://bsht067kwkuni"]
 
-[ext_resource type="Theme" uid="uid://cvafaq8nv8vv3" path="res://src/Theme_Menu/Menu.tres" id="1_7e147"]
+[ext_resource type="Theme" uid="uid://cvafaq8nv8vv3" path="res://src/Menu/Theme_Menu/Menu.tres" id="1_7e147"]
 [ext_resource type="Script" uid="uid://dvrrtespv8bhg" path="res://src/Menu/menu.gd" id="1_kcc1k"]
 [ext_resource type="PackedScene" uid="uid://b1dlqweqgaxs8" path="res://scenes/levels/Level1.tscn" id="2_6wcv6"]
 [ext_resource type="FontFile" uid="uid://b5gmutei4kn6d" path="res://assets/fonts/Frijole/Frijole-Regular.ttf" id="3_4e4iy"]
 [ext_resource type="Shader" uid="uid://dm6texk2f0o0o" path="res://src/shaders/title_menu/menu.gdshader" id="3_fi74l"]
 [ext_resource type="FontFile" uid="uid://v2v3qha7hpqg" path="res://assets/fonts/Rubik_Dirt/RubikDirt-Regular.ttf" id="4_4e4iy"]
 [ext_resource type="Texture2D" uid="uid://ccq8o1lhw7lg" path="res://assets/jaguar_pattern/JaguarPattern.jpg" id="4_7hiy7"]
+[ext_resource type="Shader" uid="uid://cit3cmxohewl2" path="res://src/shaders/background/menu.gdshader" id="4_v5e1w"]
+[ext_resource type="Texture2D" uid="uid://b30kdc0ungflk" path="res://assets/menu/background/descarga (1).jpg" id="5_nffhl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v5e1w"]
+shader = ExtResource("4_v5e1w")
+shader_parameter/wave_speed = 2.13
+shader_parameter/wave_frequency = 5.365
+shader_parameter/wave_amplitude = 0.345
+shader_parameter/wave_direction = Vector2(1, 0)
+shader_parameter/color1 = Color(0, 0.5647059, 0.18431373, 1)
+shader_parameter/color2 = Color(5.2342193e-07, 0.2223405, 0.039525744, 1)
 
 [sub_resource type="Gradient" id="Gradient_7hiy7"]
 
@@ -36,12 +45,24 @@ level = ExtResource("2_6wcv6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=62569548]
 modulate = Color(0.2, 1, 0, 1)
+z_index = -2
 material = SubResource("ShaderMaterial_v5e1w")
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = SubResource("GradientTexture2D_7e147")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=537456815]
+modulate = Color(1, 1, 1, 0.39607844)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_nffhl")
 
 [node name="TitleVBox" type="VBoxContainer" parent="." unique_id=1298017680]
 layout_mode = 0
@@ -53,6 +74,19 @@ offset_bottom = 253.0
 [node name="Title" type="Label" parent="TitleVBox" unique_id=910073026]
 material = SubResource("ShaderMaterial_7hiy7")
 layout_mode = 2
+theme_override_constants/outline_size = -96
+theme_override_fonts/font = ExtResource("3_4e4iy")
+theme_override_font_sizes/font_size = 99
+text = "UTHURUNKU"
+
+[node name="Title2" type="Label" parent="TitleVBox/Title" unique_id=2029635050]
+z_index = -1
+layout_mode = 0
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 873.0
+offset_bottom = 141.0
+theme_override_constants/outline_size = 31
 theme_override_fonts/font = ExtResource("3_4e4iy")
 theme_override_font_sizes/font_size = 99
 text = "UTHURUNKU"
