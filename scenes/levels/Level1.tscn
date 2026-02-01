@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://btb8fjov6wp1o" path="res://scenes/player/Player.tscn" id="2_fh0io"]
 [ext_resource type="PackedScene" uid="uid://c2xpbmgkk2pvu" path="res://scenes/passive-entities/tree/tree.tscn" id="3_68ib6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4si1"]
+size = Vector2(3840, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh0io"]
+size = Vector2(20, 2160)
+
 [node name="Level1" type="Node2D" unique_id=970636778]
 
 [node name="Burrow" parent="." unique_id=77785310 instance=ExtResource("1_x4si1")]
@@ -15,3 +21,27 @@ position = Vector2(1, 292)
 
 [node name="Tree" parent="." unique_id=1162253825 instance=ExtResource("3_68ib6")]
 position = Vector2(348, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=590824340]
+position = Vector2(0, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=241338988]
+shape = SubResource("RectangleShape2D_x4si1")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=647678293]
+position = Vector2(0, -1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=934165601]
+shape = SubResource("RectangleShape2D_x4si1")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1146628723]
+position = Vector2(1920, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=204221882]
+shape = SubResource("RectangleShape2D_fh0io")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1811936956]
+position = Vector2(-1920, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=233378110]
+shape = SubResource("RectangleShape2D_fh0io")
