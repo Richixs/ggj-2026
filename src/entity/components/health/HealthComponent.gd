@@ -16,6 +16,8 @@ func _ready() -> void:
 func take_damage(amount: int) -> void:
 	data.current_health -= amount
 	data.current_health = max(data.current_health, 0)
+	
+	print("%s recibió %d de daño. Salud: %d/%d" % [get_parent().name, amount, data.current_health, data.max_health])
 
 	emit_signal("health_changed", data.current_health, data.max_health)
 

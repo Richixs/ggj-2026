@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="4_tpg5x"]
 [ext_resource type="Texture2D" uid="uid://8cq4jbufuk5o" path="res://assets/entities/active-entities/player/JAGUARMOVIMIENTO3.png" id="4_v42im"]
 [ext_resource type="Script" uid="uid://sq7icbk62qb" path="res://src/entity/active-entitie/ActiveEntity.gd" id="7_npwbq"]
+[ext_resource type="Script" uid="uid://dv0dioyo5nlv6" path="res://src/entity/components/hurt-box/HurtBoxComponent.gd" id="8_v42im"]
+[ext_resource type="Script" uid="uid://dxikqggr4g1ry" path="res://src/entity/components/hit-box/HitBoxComponent.gd" id="9_hitbox"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kuee"]
 animations = [{
@@ -42,8 +44,11 @@ max_health = 3
 current_health = 3
 metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_npwbq"]
-size = Vector2(184, 54)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn6s4"]
+size = Vector2(194.5, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(194.5, 73)
 
 [node name="Player" type="CharacterBody2D" unique_id=1528831046]
 script = ExtResource("1_wr5hl")
@@ -79,10 +84,39 @@ script = ExtResource("7_npwbq")
 speed = 800.0
 metadata/_custom_type_script = "uid://sq7icbk62qb"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=362566608]
-collision_layer = 0
-collision_mask = 2
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1241170935 node_paths=PackedStringArray("health_component")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("8_v42im")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://dv0dioyo5nlv6"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186836680]
-position = Vector2(-44, -18)
-shape = SubResource("RectangleShape2D_npwbq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=186836680]
+position = Vector2(-46.25, -5)
+shape = SubResource("RectangleShape2D_pn6s4")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1241170936]
+position = Vector2(-150, 0)
+collision_layer = 4
+collision_mask = 2
+monitoring = false
+script = ExtResource("9_hitbox")
+damage_amount = 1
+metadata/_custom_type_script = "uid://dxikqggr4g1ry"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=186836681]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_hitbox")
+
+[node name="AttackVisual" type="ColorRect" parent="HitboxComponent"]
+offset_left = -97.25
+offset_top = -36.5
+offset_right = 97.25
+offset_bottom = 36.5
+color = Color(1, 0.3, 0.3, 0.5)
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

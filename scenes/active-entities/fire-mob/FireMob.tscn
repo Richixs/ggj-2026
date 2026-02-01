@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="5_xsu26"]
 [ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="6_j1eed"]
 [ext_resource type="Script" uid="uid://sq7icbk62qb" path="res://src/entity/active-entitie/ActiveEntity.gd" id="7_j1eed"]
+[ext_resource type="Script" uid="uid://dv0dioyo5nlv6" path="res://src/entity/components/hurt-box/HurtBoxComponent.gd" id="8_rcgxs"]
+[ext_resource type="Script" uid="uid://cvy1w3iards0d" path="res://src/entity/components/hit-box/HitBoxComponent.gd" id="9_hitbox"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xsu26"]
 animations = [{
@@ -45,9 +47,17 @@ size = Vector2(86.75, 103.6875)
 [sub_resource type="Resource" id="Resource_rcgxs"]
 script = ExtResource("6_j1eed")
 max_health = 1
+current_health = 1
 metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xsu26"]
+radius = 232.00862
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u8ap"]
+size = Vector2(124.5, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(124.5, 121)
 
 [node name="FireMob" type="CharacterBody2D" unique_id=908736681]
 collision_layer = 2
@@ -59,7 +69,7 @@ position = Vector2(4.7683716e-07, -1.9073486e-06)
 scale = Vector2(0.23388672, 0.23388672)
 sprite_frames = SubResource("SpriteFrames_xsu26")
 animation = &"IDLE"
-frame_progress = 0.12994054
+frame_progress = 0.9233728
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985069634]
 position = Vector2(0.625, 36.15625)
@@ -75,8 +85,32 @@ metadata/_custom_type_script = "uid://lf17lkdjf8wx"
 [node name="DetectionZone" type="Area2D" parent="." unique_id=1824556669]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectionZone" unique_id=1716236059]
+position = Vector2(0, 35)
 shape = SubResource("CircleShape2D_xsu26")
 
 [node name="ActiveEntity" type="Node" parent="." unique_id=793663158]
 script = ExtResource("7_j1eed")
 metadata/_custom_type_script = "uid://sq7icbk62qb"
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=654009101 node_paths=PackedStringArray("health_component")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("8_rcgxs")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://dv0dioyo5nlv6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=337303045]
+position = Vector2(5, 39)
+shape = SubResource("RectangleShape2D_4u8ap")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=654009102]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("9_hitbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=337303046]
+position = Vector2(5, 39)
+shape = SubResource("RectangleShape2D_hitbox")
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
