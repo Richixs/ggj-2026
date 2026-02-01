@@ -10,3 +10,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ic5kw")
+
+[node name="Title" type="Label" parent="." unique_id=910073026]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 140.0
+offset_right = 1889.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 99
+text = "UTHURUNKU: LAS ÚLTIMAS MÁSCARAS"
+
+[node name="Button" type="Button" parent="." unique_id=1350556572]
+layout_mode = 0
+offset_left = 1394.0
+offset_top = 538.0
+offset_right = 1698.0
+offset_bottom = 718.0
+theme_override_font_sizes/font_size = 126
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
