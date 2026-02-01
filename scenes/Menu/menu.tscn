@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://bkdsr7cfw0mxy"]
+[gd_scene format=3 uid="uid://bsht067kwkuni"]
 
 [ext_resource type="Script" uid="uid://dvrrtespv8bhg" path="res://src/menu/Menu.gd" id="1_kcc1k"]
+[ext_resource type="AudioStream" uid="uid://o56g03k48wtm" path="res://assets/Audio/2-14 - World 1 Map.mp3" id="2_iflpk"]
+[ext_resource type="AudioStream" uid="uid://cdy4oy2f7xvlk" path="res://assets/Audio/2-15 - World 2 Map.mp3" id="3_u7h56"]
 
 [node name="Menu" type="Control" unique_id=1544059260]
 layout_mode = 3
@@ -46,6 +48,15 @@ offset_right = 1916.0
 offset_bottom = 189.0
 theme_override_font_sizes/font_size = 126
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=586410035]
+stream = ExtResource("2_iflpk")
+bus = &"Cinematica"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1127465399]
+stream = ExtResource("3_u7h56")
+autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Config" to="." method="_on_config_pressed"]

@@ -1,8 +1,16 @@
 extends Control
 
+@onready var MasterSlider := $VBoxContainer/Slider_Master
+@onready var SFXSlider := $VBoxContainer/Slider_SFX
+@onready var MusicSlider := $VBoxContainer/Slider_Music
+@onready var CinematicSlider := $VBoxContainer/Slider_Cinematica
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MasterSlider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
+	SFXSlider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
+	MusicSlider.value = db_to_linear(AudioServer.get_bus_volume_db(3))
+	CinematicSlider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
 	pass # Replace with function body.
 
 
