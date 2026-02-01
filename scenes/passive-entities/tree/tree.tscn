@@ -13,6 +13,7 @@ script = ExtResource("3_1l6ey")
 metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
 [node name="Tree" type="StaticBody2D" unique_id=1162253825]
+y_sort_enabled = true
 script = ExtResource("1_78ntv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1479532847]
