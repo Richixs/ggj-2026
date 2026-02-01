@@ -18,4 +18,31 @@ offset_bottom = 8.0
 theme_override_font_sizes/font_size = 126
 text = "Return"
 
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=97283598]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 249.0
+offset_right = 1649.0
+offset_bottom = 738.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=908201304]
+layout_mode = 2
+theme_override_font_sizes/font_size = 126
+text = "MUSIC"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1098103032]
+layout_mode = 2
+size_flags_stretch_ratio = 15.88
+value = 100.0
+
+[node name="SFX" type="Label" parent="VBoxContainer" unique_id=1932070891]
+layout_mode = 2
+theme_override_font_sizes/font_size = 126
+text = "SFX"
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer" unique_id=178081454]
+layout_mode = 2
+size_flags_stretch_ratio = 15.88
+value = 100.0
+
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
