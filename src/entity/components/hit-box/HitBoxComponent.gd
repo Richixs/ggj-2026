@@ -8,4 +8,4 @@ func _ready():
 
 func _on_area_entered(area: Area2D):
 	if area is HurtboxComponent:
-		area.receive_damage(damage_amount)
+		area.receive_damage(damage_amount, get_parent())

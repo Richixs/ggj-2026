@@ -51,17 +51,16 @@ current_health = 1
 metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xsu26"]
-radius = 232.00862
+radius = 600.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u8ap"]
-size = Vector2(124.5, 121)
+size = Vector2(166, 197)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
 size = Vector2(124.5, 121)
 
 [node name="FireMob" type="CharacterBody2D" unique_id=908736681]
 collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_fpqjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1967949741]
@@ -100,7 +99,7 @@ health_component = NodePath("../HealthComponent")
 metadata/_custom_type_script = "uid://dv0dioyo5nlv6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=337303045]
-position = Vector2(5, 39)
+position = Vector2(4, 8.5)
 shape = SubResource("RectangleShape2D_4u8ap")
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=654009102]

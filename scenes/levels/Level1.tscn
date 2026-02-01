@@ -56,3 +56,9 @@ shape = SubResource("RectangleShape2D_fh0io")
 
 [node name="FireMob" parent="." unique_id=908736681 instance=ExtResource("5_68ib6")]
 position = Vector2(1519, 835)
+
+[node name="FireMob2" parent="." unique_id=1057592967 instance=ExtResource("5_68ib6")]
+position = Vector2(-1200, 500)
+
+[node name="FireMob3" parent="." unique_id=665548201 instance=ExtResource("5_68ib6")]
+position = Vector2(800, -700)

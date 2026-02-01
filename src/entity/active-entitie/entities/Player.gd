@@ -9,8 +9,8 @@ class_name Player
 @onready var attack_visual := $HitboxComponent/AttackVisual
 
 var is_attacking := false
-var attack_offset_left := Vector2(-150, 0)
-var attack_offset_right := Vector2(150, 0)
+var attack_offset_left := Vector2(-300, 0)
+var attack_offset_right := Vector2(300, 0)
 
 func _ready():
 	attack_visual.visible = false
@@ -43,17 +43,17 @@ func update_flip():
 func perform_attack():
 	is_attacking = true
 	attack_hitbox.monitoring = true
-	attack_visual.visible = true
 	print("Player atacó!")
 	attack_timer.start()
 
 func update_attack_position():
 	if anim.flip_h:
 		attack_hitbox.position = attack_offset_right
+		attack_visual.scale.x = 1
 	else:
 		attack_hitbox.position = attack_offset_left
+		attack_visual.scale.x = -1
 
 func _on_attack_timer_timeout():
 	is_attacking = false
 	attack_hitbox.monitoring = false
-	attack_visual.visible = false
