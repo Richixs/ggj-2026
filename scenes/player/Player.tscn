@@ -1,23 +1,40 @@
 [gd_scene format=3 uid="uid://btb8fjov6wp1o"]
 
 [ext_resource type="Script" uid="uid://bpntthky2pt5f" path="res://src/entity/active-entitie/entities/Player.gd" id="1_wr5hl"]
-[ext_resource type="Texture2D" uid="uid://dgg03dfbj8wdh" path="res://assets/entities/active-entities/player/jaguar.jpeg" id="2_gfjak"]
+[ext_resource type="Texture2D" uid="uid://ct3edi0b377y3" path="res://assets/entities/active-entities/player/JAGUARMOVIMIENTO2.png" id="2_c3xxp"]
 [ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="3_524rm"]
+[ext_resource type="Texture2D" uid="uid://de71v7xxp88xa" path="res://assets/entities/active-entities/player/JAGUARMOVIMIENTO1.png" id="3_npwbq"]
 [ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="4_tpg5x"]
+[ext_resource type="Texture2D" uid="uid://8cq4jbufuk5o" path="res://assets/entities/active-entities/player/JAGUARMOVIMIENTO3.png" id="4_v42im"]
+[ext_resource type="Script" uid="uid://sq7icbk62qb" path="res://src/entity/active-entitie/ActiveEntity.gd" id="7_npwbq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kuee"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_gfjak")
+"texture": ExtResource("2_c3xxp")
 }],
 "loop": true,
-"name": &"default",
+"name": &"IDLE",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_npwbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3xxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v42im")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_524rm"]
-size = Vector2(20.23927, 26.308903)
+size = Vector2(12.571833, 4.7774878)
 
 [sub_resource type="Resource" id="Resource_c3xxp"]
 script = ExtResource("4_tpg5x")
@@ -25,15 +42,16 @@ metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
 [node name="Player" type="CharacterBody2D" unique_id=1528831046]
 script = ExtResource("1_wr5hl")
-entity_name = "Player"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=359812069]
-position = Vector2(-2.3841858e-07, 0)
-scale = Vector2(0.9227675, 1.261321)
+position = Vector2(5.9604645e-08, 0)
+scale = Vector2(0.34907907, 0.47715238)
 sprite_frames = SubResource("SpriteFrames_4kuee")
+animation = &"run"
+frame_progress = 0.53587985
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1553075673]
-position = Vector2(0.49999046, 1.5000067)
+position = Vector2(-36, 84.00001)
 scale = Vector2(14.476807, 7.6399984)
 shape = SubResource("RectangleShape2D_524rm")
 
@@ -43,9 +61,15 @@ data = SubResource("Resource_c3xxp")
 metadata/_custom_type_script = "uid://lf17lkdjf8wx"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1029839155]
+zoom = Vector2(0.6, 0.6)
 limit_left = -1920
 limit_top = -1080
 limit_right = 1920
 limit_bottom = 1080
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="ActiveEntity" type="Node" parent="." unique_id=1979477502]
+script = ExtResource("7_npwbq")
+speed = 800.0
+metadata/_custom_type_script = "uid://sq7icbk62qb"

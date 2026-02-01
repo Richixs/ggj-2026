@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgg03dfbj8wdh"
-path="res://.godot/imported/jaguar.jpeg-99becfeae439bac1b14a219705ecb85d.ctex"
+uid="uid://8cq4jbufuk5o"
+path="res://.godot/imported/JAGUARMOVIMIENTO3.png-b17f0f9f5f811923aec8ef0ad538f442.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/entities/active-entities/player/jaguar.jpeg"
-dest_files=["res://.godot/imported/jaguar.jpeg-99becfeae439bac1b14a219705ecb85d.ctex"]
+source_file="res://assets/entities/active-entities/player/JAGUARMOVIMIENTO3.png"
+dest_files=["res://.godot/imported/JAGUARMOVIMIENTO3.png-b17f0f9f5f811923aec8ef0ad538f442.ctex"]
 
 [params]
 
