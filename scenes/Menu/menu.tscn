@@ -37,12 +37,10 @@ level = ExtResource("2_6wcv6")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=62569548]
 modulate = Color(0.2, 1, 0, 1)
 material = SubResource("ShaderMaterial_v5e1w")
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = SubResource("GradientTexture2D_7e147")
 
 [node name="TitleVBox" type="VBoxContainer" parent="." unique_id=1298017680]

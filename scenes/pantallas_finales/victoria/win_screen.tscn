@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c316rawc0jlqi"]
+
+[ext_resource type="Script" uid="uid://tdfxrfn1p6n5" path="res://src/pantallas_finales/victoria/win_screen.gd" id="1_8ooww"]
+
+[node name="WinScreen" type="Control" unique_id=891081462]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ooww")
+
+[node name="Label" type="Label" parent="." unique_id=191944847]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 192.0
+offset_right = 1637.0
+offset_bottom = 487.0
+theme_override_font_sizes/font_size = 216
+text = "¡ATIPT´TAWA!"
+
+[node name="Button" type="Button" parent="." unique_id=1073184936]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 514.0
+offset_right = 1230.0
+offset_bottom = 817.0
+theme_override_font_sizes/font_size = 216
+text = "MENU"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

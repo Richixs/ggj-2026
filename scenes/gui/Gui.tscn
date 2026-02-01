@@ -146,4 +146,5 @@ color = Color(0, 0, 0, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fade" unique_id=792012243]
 libraries/ = SubResource("AnimationLibrary_psgnt")
 
+[connection signal="timeout" from="top_gui/HBoxContainer/PanelTimer/Timer" to="top_gui" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="Fade/AnimationPlayer" to="Fade" method="_on_animation_player_animation_finished"]
