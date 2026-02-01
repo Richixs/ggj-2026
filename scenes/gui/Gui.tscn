@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="1_a38ob"]
 [ext_resource type="Script" uid="uid://bhjs45whds1jp" path="res://src/gui/top_gui.gd" id="1_rtfj6"]
 [ext_resource type="Script" uid="uid://bhpwp4rlhd7gb" path="res://src/gui/fade.gd" id="2_phmh7"]
+[ext_resource type="Script" uid="uid://cogmk8u6h1ym8" path="res://src/gui/panel_timer.gd" id="3_psgnt"]
 
 [sub_resource type="Animation" id="Animation_a38ob"]
 length = 0.001
@@ -110,17 +111,18 @@ texture = ExtResource("1_a38ob")
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.45
+script = ExtResource("3_psgnt")
 
 [node name="Label" type="Label" parent="top_gui/HBoxContainer/PanelTimer" unique_id=673517523]
 layout_mode = 0
-offset_left = 55.0
-offset_right = 199.0
+offset_right = 144.0
 offset_bottom = 172.0
 theme_override_font_sizes/font_size = 126
 text = "90"
 
 [node name="Timer" type="Timer" parent="top_gui/HBoxContainer/PanelTimer" unique_id=497682061]
-wait_time = 90.0
+one_shot = true
 
 [node name="Fade" type="Control" parent="." unique_id=895735110]
 process_mode = 3
