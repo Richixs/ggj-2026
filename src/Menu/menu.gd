@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_config_pressed() -> void:
+	get_tree().call_deferred("change_scene_to_file","res://scenes/config/Config.tscn")
 	pass # Replace with function body.
 
 
