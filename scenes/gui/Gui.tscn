@@ -1,57 +1,149 @@
 [gd_scene format=3 uid="uid://bheiw6kul2lec"]
 
 [ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="1_a38ob"]
+[ext_resource type="Script" uid="uid://bhjs45whds1jp" path="res://src/gui/top_gui.gd" id="1_rtfj6"]
+[ext_resource type="Script" uid="uid://bhpwp4rlhd7gb" path="res://src/gui/fade.gd" id="2_phmh7"]
+[ext_resource type="Script" uid="uid://cogmk8u6h1ym8" path="res://src/gui/panel_timer.gd" id="3_psgnt"]
+
+[sub_resource type="Animation" id="Animation_a38ob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_phmh7"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rtfj6"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psgnt"]
+_data = {
+&"RESET": SubResource("Animation_a38ob"),
+&"fade_in": SubResource("Animation_phmh7"),
+&"fade_out": SubResource("Animation_rtfj6")
+}
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1513963947]
 
-[node name="Control" type="Control" parent="." unique_id=936009088]
+[node name="top_gui" type="Control" parent="." unique_id=936009088]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 183.0
 grow_horizontal = 2
+script = ExtResource("1_rtfj6")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1747344512]
+[node name="HBoxContainer" type="HBoxContainer" parent="top_gui" unique_id=1747344512]
 layout_mode = 1
 offset_right = 1921.0
 offset_bottom = 167.0
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="PanelLifes" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=1212105766]
+[node name="PanelLifes" type="HBoxContainer" parent="top_gui/HBoxContainer" unique_id=1212105766]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 61
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=294558266]
+[node name="TextureRect" type="TextureRect" parent="top_gui/HBoxContainer/PanelLifes" unique_id=294558266]
 layout_mode = 2
 texture = ExtResource("1_a38ob")
+stretch_mode = 3
 
-[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=906717240]
+[node name="TextureRect2" type="TextureRect" parent="top_gui/HBoxContainer/PanelLifes" unique_id=906717240]
 layout_mode = 2
 texture = ExtResource("1_a38ob")
+stretch_mode = 3
 
-[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=1751140893]
+[node name="TextureRect3" type="TextureRect" parent="top_gui/HBoxContainer/PanelLifes" unique_id=1751140893]
 layout_mode = 2
 texture = ExtResource("1_a38ob")
+stretch_mode = 3
 
-[node name="HBoxMasks" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=723268523]
+[node name="HBoxMasks" type="HBoxContainer" parent="top_gui/HBoxContainer" unique_id=723268523]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
 alignment = 1
 
-[node name="Mask1" type="TextureRect" parent="Control/HBoxContainer/HBoxMasks" unique_id=1675752448]
+[node name="Mask1" type="TextureRect" parent="top_gui/HBoxContainer/HBoxMasks" unique_id=1675752448]
+clip_contents = true
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 texture = ExtResource("1_a38ob")
 
-[node name="PanelTimer" type="Panel" parent="Control/HBoxContainer" unique_id=1610913487]
+[node name="PanelTimer" type="Panel" parent="top_gui/HBoxContainer" unique_id=1610913487]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.45
+script = ExtResource("3_psgnt")
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/PanelTimer" unique_id=673517523]
+[node name="Label" type="Label" parent="top_gui/HBoxContainer/PanelTimer" unique_id=673517523]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 144.0
+offset_bottom = 172.0
 theme_override_font_sizes/font_size = 126
 text = "90"
+
+[node name="Timer" type="Timer" parent="top_gui/HBoxContainer/PanelTimer" unique_id=497682061]
+one_shot = true
+
+[node name="Fade" type="Control" parent="." unique_id=895735110]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_phmh7")
+
+[node name="ColorRect" type="ColorRect" parent="Fade" unique_id=984322365]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade" unique_id=792012243]
+libraries/ = SubResource("AnimationLibrary_psgnt")
+
+[connection signal="animation_finished" from="Fade/AnimationPlayer" to="Fade" method="_on_animation_player_animation_finished"]
