@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dvrrtespv8bhg" path="res://src/Menu/menu.gd" id="1_kcc1k"]
 [ext_resource type="PackedScene" uid="uid://b1dlqweqgaxs8" path="res://scenes/levels/Level1.tscn" id="2_6wcv6"]
+[ext_resource type="FontFile" uid="uid://b5gmutei4kn6d" path="res://assets/fonts/Frijole/Frijole-Regular.ttf" id="3_4e4iy"]
+[ext_resource type="FontFile" uid="uid://v2v3qha7hpqg" path="res://assets/fonts/Rubik_Dirt/RubikDirt-Regular.ttf" id="4_4e4iy"]
 
 [node name="Menu" type="Control" unique_id=1544059260]
 layout_mode = 3
@@ -13,14 +15,24 @@ grow_vertical = 2
 script = ExtResource("1_kcc1k")
 level = ExtResource("2_6wcv6")
 
-[node name="Title" type="Label" parent="." unique_id=910073026]
+[node name="TitleVBox" type="VBoxContainer" parent="." unique_id=1298017680]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 213.0
-offset_right = 1889.0
-offset_bottom = 348.0
+offset_right = 76.0
+offset_bottom = 253.0
+
+[node name="Title" type="Label" parent="TitleVBox" unique_id=910073026]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4e4iy")
 theme_override_font_sizes/font_size = 99
-text = "UTHURUNKU: LAS ÚLTIMAS MÁSCARAS"
+text = "UTHURUNKU:"
+
+[node name="Label" type="Label" parent="TitleVBox" unique_id=324212670]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_4e4iy")
+theme_override_font_sizes/font_size = 64
+text = "Las últimas mascaras"
 
 [node name="Start" type="Button" parent="." unique_id=1350556572]
 layout_mode = 0
