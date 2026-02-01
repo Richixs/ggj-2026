@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://3w1qp7glwgnj" path="res://src/levels/level_1.gd" id="1_fh0io"]
 [ext_resource type="PackedScene" uid="uid://lnmraniubi2l" path="res://scenes/passive-entities/burrow/Burrow.tscn" id="1_x4si1"]
 [ext_resource type="PackedScene" uid="uid://btb8fjov6wp1o" path="res://scenes/player/Player.tscn" id="2_fh0io"]
+[ext_resource type="Texture2D" uid="uid://bv1wpaapyneq1" path="res://assets/world/TILEMAPPASTOCOMPLETO.png" id="4_fh0io"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4si1"]
 size = Vector2(3840, 20)
@@ -12,6 +13,14 @@ size = Vector2(20, 2160)
 
 [node name="Level1" type="Node2D" unique_id=970636778]
 script = ExtResource("1_fh0io")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=622213355]
+offset_left = -1998.0
+offset_top = -1243.0
+offset_right = 2002.0
+offset_bottom = 1257.0
+texture = ExtResource("4_fh0io")
+stretch_mode = 1
 
 [node name="Burrow" parent="." unique_id=77785310 instance=ExtResource("1_x4si1")]
 position = Vector2(2, 0)
