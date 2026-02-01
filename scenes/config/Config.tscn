@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d2hxod8i7bahv"]
+
+[ext_resource type="Script" uid="uid://shuy1j0lcjy8" path="res://src/config/Config.gd" id="1_ej5j1"]
+
+[node name="Config" type="Control" unique_id=289436819]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ej5j1")
