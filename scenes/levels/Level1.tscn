@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b1dlqweqgaxs8"]
+
+[ext_resource type="PackedScene" uid="uid://lnmraniubi2l" path="res://scenes/passive-entities/burrow/Burrow.tscn" id="1_x4si1"]
+[ext_resource type="PackedScene" uid="uid://btb8fjov6wp1o" path="res://scenes/player/Player.tscn" id="2_fh0io"]
+[ext_resource type="PackedScene" uid="uid://c2xpbmgkk2pvu" path="res://scenes/passive-entities/tree/tree.tscn" id="3_68ib6"]
+
+[node name="Level1" type="Node2D" unique_id=970636778]
+
+[node name="Burrow" parent="." unique_id=77785310 instance=ExtResource("1_x4si1")]
+position = Vector2(2, 0)
+scale = Vector2(1, 1.0308831)
+
+[node name="Player" parent="." unique_id=1528831046 instance=ExtResource("2_fh0io")]
+position = Vector2(1, 292)
+
+[node name="Tree" parent="." unique_id=1162253825 instance=ExtResource("3_68ib6")]
+position = Vector2(348, 0)

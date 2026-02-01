@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://lnmraniubi2l"]
+
+[ext_resource type="Script" uid="uid://cukainfv2glu0" path="res://src/entity/passive-entitie/entities/Burrow.gd" id="1_n53ng"]
+[ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="2_n53ng"]
+[ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="2_xuiwo"]
+[ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="3_qtunr"]
+
+[sub_resource type="Resource" id="Resource_n53ng"]
+script = ExtResource("3_qtunr")
+metadata/_custom_type_script = "uid://c51h00gl0vg4j"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e4i1"]
+size = Vector2(118, 120)
+
+[node name="Burrow" type="StaticBody2D" unique_id=77785310]
+script = ExtResource("1_n53ng")
+entity_name = "Burrow"
+metadata/_custom_type_script = "uid://c5axut37muvhq"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1150165771]
+scale = Vector2(2.7200003, 2.7200003)
+texture = ExtResource("2_n53ng")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=70011938]
+script = ExtResource("2_xuiwo")
+data = SubResource("Resource_n53ng")
+metadata/_custom_type_script = "uid://lf17lkdjf8wx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664777343]
+scale = Vector2(2.6800027, 2.6800027)
+shape = SubResource("RectangleShape2D_4e4i1")

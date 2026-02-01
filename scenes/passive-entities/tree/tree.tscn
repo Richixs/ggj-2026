@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c2xpbmgkk2pvu"]
+
+[ext_resource type="Script" uid="uid://d4hb2lf5wlrtr" path="res://src/entity/passive-entitie/entities/Tree.gd" id="1_78ntv"]
+[ext_resource type="Texture2D" uid="uid://s58avork3wct" path="res://assets/entities/passive-entities/tree/tree.png" id="2_1l6ey"]
+[ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="2_kd7of"]
+[ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="3_1l6ey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l0wq"]
+size = Vector2(7.5258036, 16.612997)
+
+[sub_resource type="Resource" id="Resource_nd74o"]
+script = ExtResource("3_1l6ey")
+metadata/_custom_type_script = "uid://c51h00gl0vg4j"
+
+[node name="Tree" type="StaticBody2D" unique_id=1162253825]
+script = ExtResource("1_78ntv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1479532847]
+scale = Vector2(8.999999, 8.999999)
+texture = ExtResource("2_1l6ey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=545780825]
+position = Vector2(-1, 189)
+scale = Vector2(25.230238, 6.7889023)
+shape = SubResource("RectangleShape2D_6l0wq")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1688957011]
+script = ExtResource("2_kd7of")
+data = SubResource("Resource_nd74o")
+metadata/_custom_type_script = "uid://lf17lkdjf8wx"
