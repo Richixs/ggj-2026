@@ -80,32 +80,40 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=294558266]
 layout_mode = 2
 texture = ExtResource("1_a38ob")
+stretch_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=906717240]
 layout_mode = 2
 texture = ExtResource("1_a38ob")
+stretch_mode = 3
 
 [node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=1751140893]
 layout_mode = 2
 texture = ExtResource("1_a38ob")
+stretch_mode = 3
 
 [node name="HBoxMasks" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=723268523]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
 alignment = 1
 
 [node name="Mask1" type="TextureRect" parent="Control/HBoxContainer/HBoxMasks" unique_id=1675752448]
+clip_contents = true
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 texture = ExtResource("1_a38ob")
 
 [node name="PanelTimer" type="Panel" parent="Control/HBoxContainer" unique_id=1610913487]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/PanelTimer" unique_id=673517523]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 55.0
+offset_right = 199.0
+offset_bottom = 172.0
 theme_override_font_sizes/font_size = 126
 text = "90"
 
