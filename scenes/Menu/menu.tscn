@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bsht067kwkuni"]
 
 [ext_resource type="Script" uid="uid://dvrrtespv8bhg" path="res://src/Menu/menu.gd" id="1_kcc1k"]
+[ext_resource type="PackedScene" uid="uid://b1dlqweqgaxs8" path="res://scenes/levels/Level1.tscn" id="2_6wcv6"]
 
 [node name="Menu" type="Control" unique_id=1544059260]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kcc1k")
+level = ExtResource("2_6wcv6")
 
 [node name="Title" type="Label" parent="." unique_id=910073026]
 layout_mode = 0
