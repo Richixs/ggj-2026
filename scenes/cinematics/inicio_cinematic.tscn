@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bxqho7eydhtg1"]
+
+[ext_resource type="Script" uid="uid://b3q2uwgkuydyd" path="res://src/cinematics/inicio_cinematic.gd" id="1_s3bva"]
+[ext_resource type="Texture2D" uid="uid://ccjn5jbmjnnqd" path="res://assets/cinematics/IMÁGEN1.png" id="2_hjjeo"]
+[ext_resource type="Texture2D" uid="uid://c2e46v2mcfb4o" path="res://assets/cinematics/IMÁGEN2.png" id="3_xcd5j"]
+[ext_resource type="Texture2D" uid="uid://b5j67lpqymccj" path="res://assets/cinematics/IMÁGEN4.png" id="4_yve15"]
+[ext_resource type="Texture2D" uid="uid://dl0msdbj8h0pl" path="res://assets/cinematics/IMÁGEN5.png" id="5_ja05c"]
+
+[sub_resource type="Animation" id="Animation_8ceed"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Imágen1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Imágen2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Imágen4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Imágen5:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ielt7"]
+resource_name = "anim"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Imágen1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Imágen2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Imágen4:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Imágen5:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_400nl"]
+_data = {
+&"RESET": SubResource("Animation_8ceed"),
+&"anim": SubResource("Animation_ielt7")
+}
+
+[node name="Node2D" type="Node2D" unique_id=353317619]
+script = ExtResource("1_s3bva")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=665183959]
+libraries/ = SubResource("AnimationLibrary_400nl")
+autoplay = &"anim"
+
+[node name="Imágen1" type="Sprite2D" parent="." unique_id=693608809]
+texture = ExtResource("2_hjjeo")
+centered = false
+
+[node name="Imágen2" type="Sprite2D" parent="." unique_id=1961261276]
+texture = ExtResource("3_xcd5j")
+centered = false
+
+[node name="Imágen4" type="Sprite2D" parent="." unique_id=514714055]
+texture = ExtResource("4_yve15")
+centered = false
+
+[node name="Imágen5" type="Sprite2D" parent="." unique_id=2010525142]
+texture = ExtResource("5_ja05c")
+centered = false
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
