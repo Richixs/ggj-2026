@@ -8,21 +8,23 @@ extends Control
 		$HBoxContainer/PanelLifes/TextureRect3
 		]
 
+func change_lose_scene():
+	get_tree().call_deferred("change_scene_to_file","res://scenes/pantallas_finales/derrota/derrota.tscn")
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if player != null:
 		var hp_player = player.get_health_component().data.current_health
-		if hp_player <= 100:
+		if hp_player == 3:
 			textures[0].visible = false
-		elif hp_player <= 67:
+		elif hp_player == 2:
 			textures[1].visible = false
-		elif hp_player <= 34:
+		elif hp_player == 1:
 			textures[2].visible = false
-			get_tree().call_deferred("change_scene_to_file","res://scenes/pantallas_finales/derrota/derrota.tscn")
-
 		else:
 			print("Perdiste")
+			change_lose_scene()
 	pass # Replace with function body.
 
 
@@ -33,5 +35,5 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	get_tree().call_deferred("change_scene_to_file","res://scenes/pantallas_finales/victoria/win_screen.tscn")
+	change_lose_scene()
 	pass # Replace with function body.
