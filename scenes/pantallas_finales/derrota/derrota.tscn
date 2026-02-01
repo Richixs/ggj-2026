@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b7r475auksi21"]
 
+[ext_resource type="Script" uid="uid://42vxa2hqaytu" path="res://src/pantallas_finales/derrota/derrota.gd" id="1_gpglj"]
+
 [node name="Derrota" type="Control" unique_id=192682270]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gpglj")
 
 [node name="Label" type="Label" parent="." unique_id=1796587001]
 layout_mode = 0
@@ -25,3 +28,5 @@ offset_right = 1208.0
 offset_bottom = 857.0
 theme_override_font_sizes/font_size = 216
 text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
