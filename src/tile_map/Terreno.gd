@@ -11,8 +11,10 @@ func _ready() -> void:
 
 func turn_off_celda(celda):
 	var cell :Celda = celda
-	change_state_cell(cell.coords)
-	state_cells.erase(celda)
+	var state = get_state_cell(cell.coords)
+	if state == 1:
+		change_state_cell(cell.coords)
+		state_cells.erase(celda)
 
 func get_state_cell(position:Vector2):
 	var coords = local_to_map(position)
@@ -20,7 +22,9 @@ func get_state_cell(position:Vector2):
 
 func propagar_fuego(position:Vector2):
 	for dir in direction:
-		change_state_cell(position + dir * 64)
+		var state = get_state_cell(position + dir * 64)
+		if state == 0:
+			change_state_cell(position + dir * 64)
 
 func change_state_cell(position: Vector2):
 	var coords = local_to_map(position)
@@ -36,10 +40,10 @@ func change_state_cell(position: Vector2):
 			add_child(celda)
 			state_cells.append(celda)
 		1:
-			print("estado 1")
+			print("estado braza")
 			set_cell(coords,2,cell_atlas_coords)
 		2:
-			print("estado 2")
+			print("estado ceniza")
 			set_cell(coords,0,cell_atlas_coords)
 
 
