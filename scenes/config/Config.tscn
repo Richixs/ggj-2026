@@ -21,16 +21,26 @@ text = "Return"
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=97283598]
 layout_mode = 0
 offset_left = 171.0
-offset_top = 249.0
+offset_top = 216.0
 offset_right = 1649.0
-offset_bottom = 738.0
+offset_bottom = 996.0
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=908201304]
+[node name="General" type="Label" parent="VBoxContainer" unique_id=2147271862]
+layout_mode = 2
+theme_override_font_sizes/font_size = 126
+text = "MASTER"
+
+[node name="Slider_Master" type="HSlider" parent="VBoxContainer" unique_id=1647996120]
+layout_mode = 2
+size_flags_stretch_ratio = 15.88
+value = 100.0
+
+[node name="Music" type="Label" parent="VBoxContainer" unique_id=908201304]
 layout_mode = 2
 theme_override_font_sizes/font_size = 126
 text = "MUSIC"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1098103032]
+[node name="Slider_Music" type="HSlider" parent="VBoxContainer" unique_id=1098103032]
 layout_mode = 2
 size_flags_stretch_ratio = 15.88
 value = 100.0
@@ -40,7 +50,17 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 126
 text = "SFX"
 
-[node name="HSlider2" type="HSlider" parent="VBoxContainer" unique_id=178081454]
+[node name="Slider_SFX" type="HSlider" parent="VBoxContainer" unique_id=178081454]
+layout_mode = 2
+size_flags_stretch_ratio = 15.88
+value = 100.0
+
+[node name="Cinematica" type="Label" parent="VBoxContainer" unique_id=968518234]
+layout_mode = 2
+theme_override_font_sizes/font_size = 126
+text = "CINEMATICA"
+
+[node name="Slider_Cinematica" type="HSlider" parent="VBoxContainer" unique_id=1601961714]
 layout_mode = 2
 size_flags_stretch_ratio = 15.88
 value = 100.0
