@@ -10,3 +10,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ej5j1")
+
+[node name="Return" type="Button" parent="." unique_id=1835170730]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 126
+text = "Return"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

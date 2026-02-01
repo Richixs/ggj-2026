@@ -9,3 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_return_pressed() -> void:
+	get_tree().call_deferred("change_scene_to_file","res://scenes/menu/Menu.tscn")
+	pass # Replace with function body.
