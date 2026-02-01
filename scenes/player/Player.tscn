@@ -38,7 +38,12 @@ size = Vector2(12.571833, 6.969898)
 
 [sub_resource type="Resource" id="Resource_c3xxp"]
 script = ExtResource("4_tpg5x")
+max_health = 3
+current_health = 3
 metadata/_custom_type_script = "uid://c51h00gl0vg4j"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npwbq"]
+size = Vector2(184, 54)
 
 [node name="Player" type="CharacterBody2D" unique_id=1528831046]
 script = ExtResource("1_wr5hl")
@@ -73,3 +78,11 @@ rotation_smoothing_enabled = true
 script = ExtResource("7_npwbq")
 speed = 800.0
 metadata/_custom_type_script = "uid://sq7icbk62qb"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=362566608]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=186836680]
+position = Vector2(-44, -18)
+shape = SubResource("RectangleShape2D_npwbq")

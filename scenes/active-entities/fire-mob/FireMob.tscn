@@ -44,6 +44,7 @@ size = Vector2(86.75, 103.6875)
 
 [sub_resource type="Resource" id="Resource_rcgxs"]
 script = ExtResource("6_j1eed")
+max_health = 1
 metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xsu26"]
@@ -58,7 +59,7 @@ position = Vector2(4.7683716e-07, -1.9073486e-06)
 scale = Vector2(0.23388672, 0.23388672)
 sprite_frames = SubResource("SpriteFrames_xsu26")
 animation = &"IDLE"
-frame_progress = 0.38597596
+frame_progress = 0.12994054
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985069634]
 position = Vector2(0.625, 36.15625)
