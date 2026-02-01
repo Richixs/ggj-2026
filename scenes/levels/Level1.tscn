@@ -19,6 +19,7 @@ scale = Vector2(1, 1.0308831)
 
 [node name="Player" parent="." unique_id=1528831046 instance=ExtResource("2_fh0io")]
 position = Vector2(1, 292)
+speed = 750.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=590824340]
 position = Vector2(0, 1080)
