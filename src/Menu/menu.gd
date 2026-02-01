@@ -11,7 +11,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _on_config_pressed() -> void:
+	pass # Replace with function body.
 
-func _on_button_pressed() -> void:
+
+func _on_start_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_packed",level)
+	
 	pass # Replace with function body.

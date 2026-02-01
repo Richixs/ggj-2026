@@ -20,7 +20,7 @@ offset_bottom = 275.0
 theme_override_font_sizes/font_size = 99
 text = "UTHURUNKU: LAS ÚLTIMAS MÁSCARAS"
 
-[node name="Button" type="Button" parent="." unique_id=1350556572]
+[node name="Start" type="Button" parent="." unique_id=1350556572]
 layout_mode = 0
 offset_left = 1394.0
 offset_top = 538.0
@@ -29,4 +29,12 @@ offset_bottom = 718.0
 theme_override_font_sizes/font_size = 126
 text = "Start"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Config" type="Button" parent="." unique_id=431677649]
+layout_mode = 0
+offset_left = 1394.0
+offset_top = 538.0
+offset_right = 1402.0
+offset_bottom = 546.0
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Config" to="." method="_on_config_pressed"]
