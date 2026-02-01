@@ -7,12 +7,16 @@
 
 [sub_resource type="Resource" id="Resource_n53ng"]
 script = ExtResource("3_qtunr")
+max_health = 1
+current_health = 1
 metadata/_custom_type_script = "uid://c51h00gl0vg4j"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4e4i1"]
 size = Vector2(118, 120)
 
 [node name="Burrow" type="StaticBody2D" unique_id=77785310]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_n53ng")
 entity_name = "Burrow"
 metadata/_custom_type_script = "uid://c5axut37muvhq"
