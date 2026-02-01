@@ -33,7 +33,10 @@ text = "MASTER"
 [node name="Slider_Master" type="HSlider" parent="VBoxContainer" unique_id=1647996120]
 layout_mode = 2
 size_flags_stretch_ratio = 15.88
-value = 100.0
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="Music" type="Label" parent="VBoxContainer" unique_id=908201304]
 layout_mode = 2
@@ -43,7 +46,10 @@ text = "MUSIC"
 [node name="Slider_Music" type="HSlider" parent="VBoxContainer" unique_id=1098103032]
 layout_mode = 2
 size_flags_stretch_ratio = 15.88
-value = 100.0
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="SFX" type="Label" parent="VBoxContainer" unique_id=1932070891]
 layout_mode = 2
@@ -53,7 +59,10 @@ text = "SFX"
 [node name="Slider_SFX" type="HSlider" parent="VBoxContainer" unique_id=178081454]
 layout_mode = 2
 size_flags_stretch_ratio = 15.88
-value = 100.0
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [node name="Cinematica" type="Label" parent="VBoxContainer" unique_id=968518234]
 layout_mode = 2
@@ -63,6 +72,13 @@ text = "CINEMATICA"
 [node name="Slider_Cinematica" type="HSlider" parent="VBoxContainer" unique_id=1601961714]
 layout_mode = 2
 size_flags_stretch_ratio = 15.88
-value = 100.0
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 1.0
 
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_Master" to="." method="_on_slider_master_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_Music" to="." method="_on_slider_music_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_SFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_Cinematica" to="." method="_on_slider_cinematica_value_changed"]
