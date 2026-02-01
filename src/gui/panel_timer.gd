@@ -5,12 +5,12 @@ extends Panel
 func _ready() -> void:
 	#comment
 	$Timer.start(90)
-	pass # Replace with function body.
+	pass 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var time:=Time.get_offset_string_from_offset_minutes($Timer.time_left)
-	time = time.substr(1)
-	$Label.text = time
-	pass
+	var time_left = $Timer.time_left
+	var minutes = floor(time_left / 60)
+	var seconds = int(time_left) % 60
+	$Label.text = "%02d:%02d" % [minutes, seconds]

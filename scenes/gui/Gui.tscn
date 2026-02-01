@@ -116,10 +116,12 @@ script = ExtResource("3_psgnt")
 
 [node name="Label" type="Label" parent="top_gui/HBoxContainer/PanelTimer" unique_id=673517523]
 layout_mode = 0
-offset_right = 144.0
+offset_right = 300.0
 offset_bottom = 172.0
-theme_override_font_sizes/font_size = 126
-text = "90"
+theme_override_font_sizes/font_size = 100
+text = "01:30"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="top_gui/HBoxContainer/PanelTimer" unique_id=497682061]
 one_shot = true

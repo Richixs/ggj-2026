@@ -6,6 +6,7 @@ class_name Player
 @onready var attack_hitbox := $HitboxComponent
 @onready var attack_timer := $AttackTimer
 @onready var attack_visual := $HitboxComponent/AttackVisual
+@onready var health_component := $HealthComponent
 
 var is_attacking := false
 var attack_offset_left := Vector2(-300, 0)
@@ -13,6 +14,14 @@ var attack_offset_right := Vector2(300, 0)
 
 func _ready():
 	attack_visual.visible = false
+	if health_component:
+		health_component.died.connect(_on_died)
+
+func _on_died() -> void:
+	call_deferred("_change_to_defeat")
+
+func _change_to_defeat() -> void:
+	get_tree().change_scene_to_file("res://scenes/pantallas_finales/derrota/derrota.tscn")
 
 func _physics_process(_delta):
 	movement.input_vector = Input.get_vector("Left", "Right", "Up", "Down")

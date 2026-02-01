@@ -38,5 +38,7 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	change_lose_scene()
-	pass # Replace with function body.
+	change_win_scene()
+
+func change_win_scene():
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/pantallas_finales/victoria/win_screen.tscn")
