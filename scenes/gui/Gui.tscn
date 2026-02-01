@@ -2,6 +2,58 @@
 
 [ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="1_a38ob"]
 
+[sub_resource type="Animation" id="Animation_a38ob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_phmh7"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rtfj6"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psgnt"]
+_data = {
+&"RESET": SubResource("Animation_a38ob"),
+&"fade_in": SubResource("Animation_phmh7"),
+&"fade_out": SubResource("Animation_rtfj6")
+}
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1513963947]
 
 [node name="Control" type="Control" parent="." unique_id=936009088]
@@ -55,3 +107,23 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 126
 text = "90"
+
+[node name="Fade" type="Control" parent="." unique_id=895735110]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Fade" unique_id=984322365]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade" unique_id=792012243]
+libraries/ = SubResource("AnimationLibrary_psgnt")
