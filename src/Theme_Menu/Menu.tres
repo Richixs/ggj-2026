@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cvafaq8nv8vv3"]
+
+[ext_resource type="FontFile" uid="uid://b5gmutei4kn6d" path="res://assets/fonts/Frijole/Frijole-Regular.ttf" id="1_4260f"]
+
+[resource]
+Button/fonts/font = ExtResource("1_4260f")

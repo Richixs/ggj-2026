@@ -1,24 +1,14 @@
 [gd_scene format=3 uid="uid://bsht067kwkuni"]
 
+[ext_resource type="Theme" uid="uid://cvafaq8nv8vv3" path="res://src/Theme_Menu/Menu.tres" id="1_7e147"]
 [ext_resource type="Script" uid="uid://dvrrtespv8bhg" path="res://src/Menu/menu.gd" id="1_kcc1k"]
 [ext_resource type="PackedScene" uid="uid://b1dlqweqgaxs8" path="res://scenes/levels/Level1.tscn" id="2_6wcv6"]
 [ext_resource type="FontFile" uid="uid://b5gmutei4kn6d" path="res://assets/fonts/Frijole/Frijole-Regular.ttf" id="3_4e4iy"]
-[ext_resource type="Shader" uid="uid://0he8dl77j6cy" path="res://src/shaders/Texture_Background/background_gradient.gdshader" id="3_7e147"]
 [ext_resource type="Shader" uid="uid://dm6texk2f0o0o" path="res://src/shaders/title_menu/menu.gdshader" id="3_fi74l"]
 [ext_resource type="FontFile" uid="uid://v2v3qha7hpqg" path="res://assets/fonts/Rubik_Dirt/RubikDirt-Regular.ttf" id="4_4e4iy"]
 [ext_resource type="Texture2D" uid="uid://ccq8o1lhw7lg" path="res://assets/jaguar_pattern/JaguarPattern.jpg" id="4_7hiy7"]
 
-[sub_resource type="Gradient" id="Gradient_7e147"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v5e1w"]
-gradient = SubResource("Gradient_7e147")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v5e1w"]
-shader = ExtResource("3_7e147")
-shader_parameter/gradient_texture = SubResource("GradientTexture2D_v5e1w")
-shader_parameter/rotation_angle = 0.0
-shader_parameter/rotation_speed = 1.0
-shader_parameter/center = Vector2(0.5, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_7hiy7"]
 
@@ -40,10 +30,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7e147")
 script = ExtResource("1_kcc1k")
 level = ExtResource("2_6wcv6")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=62569548]
+modulate = Color(0.2, 1, 0, 1)
 material = SubResource("ShaderMaterial_v5e1w")
 layout_mode = 1
 anchors_preset = 15
@@ -52,16 +44,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_7e147")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=354595282]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(6.2569975e-06, 0.7434508, 0.021241063, 1)
 
 [node name="TitleVBox" type="VBoxContainer" parent="." unique_id=1298017680]
 layout_mode = 0
@@ -78,7 +60,9 @@ theme_override_font_sizes/font_size = 99
 text = "UTHURUNKU"
 
 [node name="Label" type="Label" parent="TitleVBox" unique_id=324212670]
+modulate = Color(0.28778407, 0.28778407, 0.28778407, 1)
 layout_mode = 2
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("4_4e4iy")
 theme_override_font_sizes/font_size = 64
 text = "LAS ÚLTIMAS MÁSCARAS"
@@ -86,28 +70,28 @@ horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="." unique_id=1350556572]
 layout_mode = 0
-offset_left = 1394.0
-offset_top = 538.0
-offset_right = 1698.0
-offset_bottom = 718.0
+offset_left = 1294.0
+offset_top = 596.0
+offset_right = 1758.0
+offset_bottom = 779.0
 theme_override_font_sizes/font_size = 126
 text = "Start"
 
 [node name="Config" type="Button" parent="." unique_id=431677649]
 layout_mode = 0
-offset_left = 1360.0
-offset_top = 759.0
-offset_right = 1738.0
-offset_bottom = 939.0
+offset_left = 1222.0
+offset_top = 812.0
+offset_right = 1798.0
+offset_bottom = 995.0
 theme_override_font_sizes/font_size = 126
 text = "config"
 
 [node name="Exit" type="Button" parent="." unique_id=1731161306]
 layout_mode = 0
-offset_left = 1683.0
-offset_top = 9.0
-offset_right = 1916.0
-offset_bottom = 189.0
+offset_left = 1498.0
+offset_top = 52.0
+offset_right = 1850.0
+offset_bottom = 235.0
 theme_override_font_sizes/font_size = 126
 text = "Exit"
 
