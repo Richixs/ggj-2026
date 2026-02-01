@@ -18,6 +18,7 @@ entity_name = "Burrow"
 metadata/_custom_type_script = "uid://c5axut37muvhq"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1150165771]
+scale = Vector2(2.7200003, 2.7200003)
 texture = ExtResource("2_n53ng")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=70011938]
@@ -26,4 +27,5 @@ data = SubResource("Resource_n53ng")
 metadata/_custom_type_script = "uid://lf17lkdjf8wx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664777343]
+scale = Vector2(2.6800027, 2.6800027)
 shape = SubResource("RectangleShape2D_4e4i1")

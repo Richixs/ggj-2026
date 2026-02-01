@@ -6,7 +6,8 @@
 [node name="Main" type="Node2D" unique_id=1941038791]
 
 [node name="Burrow" parent="." unique_id=77785310 instance=ExtResource("2_rvslj")]
-position = Vector2(854, 538)
+position = Vector2(2, 0)
+scale = Vector2(1, 1.0308831)
 
 [node name="Player" parent="." unique_id=1528831046 instance=ExtResource("2_0bbpv")]
-position = Vector2(173, 120)
+position = Vector2(1, 292)

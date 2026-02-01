@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btb8fjov6wp1o"]
 
 [ext_resource type="Script" uid="uid://bpntthky2pt5f" path="res://src/entity/ActiveEntity/entities/Player.gd" id="1_wr5hl"]
-[ext_resource type="Texture2D" uid="uid://dgg03dfbj8wdh" path="res://assets/player/jaguar.jpeg" id="2_gfjak"]
+[ext_resource type="Texture2D" uid="uid://dgg03dfbj8wdh" path="res://assets/entities/active-entities/player/jaguar.jpeg" id="2_gfjak"]
 [ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="3_524rm"]
 [ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="4_tpg5x"]
 
@@ -28,11 +28,12 @@ speed = 500.0
 entity_name = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1553075673]
+scale = Vector2(14.476807, 7.6399984)
 shape = SubResource("CircleShape2D_gfjak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=359812069]
 position = Vector2(-2.3841858e-07, 0)
-scale = Vector2(0.08805032, 0.16509439)
+scale = Vector2(0.9227675, 1.261321)
 sprite_frames = SubResource("SpriteFrames_4kuee")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1711605879]
@@ -41,3 +42,9 @@ data = SubResource("Resource_c3xxp")
 metadata/_custom_type_script = "uid://lf17lkdjf8wx"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1029839155]
+limit_left = -1920
+limit_top = -1080
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
