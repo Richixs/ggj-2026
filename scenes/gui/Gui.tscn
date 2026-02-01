@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bheiw6kul2lec"]
+
+[ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="1_a38ob"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1513963947]
+
+[node name="Control" type="Control" parent="." unique_id=936009088]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 183.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1747344512]
+layout_mode = 1
+offset_right = 1921.0
+offset_bottom = 167.0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="PanelLifes" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=1212105766]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=294558266]
+layout_mode = 2
+texture = ExtResource("1_a38ob")
+
+[node name="HBoxMasks" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=723268523]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Mask1" type="TextureRect" parent="Control/HBoxContainer/HBoxMasks" unique_id=1675752448]
+layout_mode = 2
+texture = ExtResource("1_a38ob")
+
+[node name="PanelTimer" type="Panel" parent="Control/HBoxContainer" unique_id=1610913487]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/PanelTimer" unique_id=673517523]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 126
+text = "90"
