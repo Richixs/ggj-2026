@@ -1,13 +1,3 @@
 [gd_scene format=3 uid="uid://ctuqr3ktcb2o8"]
 
-[ext_resource type="PackedScene" uid="uid://btb8fjov6wp1o" path="res://scenes/player/Player.tscn" id="2_0bbpv"]
-[ext_resource type="PackedScene" uid="uid://lnmraniubi2l" path="res://scenes/passive-entities/burrow/Burrow.tscn" id="2_rvslj"]
-
 [node name="Main" type="Node2D" unique_id=1941038791]
-
-[node name="Burrow" parent="." unique_id=77785310 instance=ExtResource("2_rvslj")]
-position = Vector2(2, 0)
-scale = Vector2(1, 1.0308831)
-
-[node name="Player" parent="." unique_id=1528831046 instance=ExtResource("2_0bbpv")]
-position = Vector2(1, 292)

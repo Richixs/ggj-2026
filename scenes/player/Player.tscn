@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btb8fjov6wp1o"]
 
-[ext_resource type="Script" uid="uid://bpntthky2pt5f" path="res://src/entity/ActiveEntity/entities/Player.gd" id="1_wr5hl"]
+[ext_resource type="Script" uid="uid://bpntthky2pt5f" path="res://src/entity/active-entitie/entities/Player.gd" id="1_wr5hl"]
 [ext_resource type="Texture2D" uid="uid://dgg03dfbj8wdh" path="res://assets/entities/active-entities/player/jaguar.jpeg" id="2_gfjak"]
 [ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="3_524rm"]
 [ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="4_tpg5x"]

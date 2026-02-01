@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lnmraniubi2l"]
 
-[ext_resource type="Script" uid="uid://cukainfv2glu0" path="res://src/entity/PassiveEntity/entities/Burrow.gd" id="1_n53ng"]
+[ext_resource type="Script" uid="uid://cukainfv2glu0" path="res://src/entity/passive-entitie/entities/Burrow.gd" id="1_n53ng"]
 [ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="2_n53ng"]
 [ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="2_xuiwo"]
 [ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="3_qtunr"]
