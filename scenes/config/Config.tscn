@@ -66,3 +66,7 @@ size_flags_stretch_ratio = 15.88
 value = 100.0
 
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_Master" to="." method="_on_slider_master_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_Music" to="." method="_on_slider_music_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_SFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Slider_Cinematica" to="." method="_on_slider_cinematica_value_changed"]
