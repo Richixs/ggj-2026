@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dwd4d5fblaw5b" path="res://src/world/FireSystem.gd" id="1_5qbjp"]
 
+[sub_resource type="TileSet" id="TileSet_5qbjp"]
+
 [node name="World" type="Node2D" unique_id=2094414599]
 
 [node name="TerrainMap" type="TileMapLayer" parent="." unique_id=35145878]
+tile_set = SubResource("TileSet_5qbjp")
 
 [node name="FireMap" type="TileMapLayer" parent="." unique_id=431870762]
 
