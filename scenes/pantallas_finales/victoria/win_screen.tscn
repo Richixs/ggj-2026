@@ -1,6 +1,140 @@
 [gd_scene format=3 uid="uid://c316rawc0jlqi"]
 
 [ext_resource type="Script" uid="uid://tdfxrfn1p6n5" path="res://src/pantallas_finales/victoria/win_screen.gd" id="1_8ooww"]
+[ext_resource type="Texture2D" uid="uid://bv1wpaapyneq1" path="res://assets/world/TILEMAPPASTOCOMPLETO.png" id="2_k4uac"]
+[ext_resource type="Texture2D" uid="uid://cya8knucceve7" path="res://assets/pantallas_finales/victoria/descarga (5).jpg" id="2_negw0"]
+
+[sub_resource type="Animation" id="Animation_i11wh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [216]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label2:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [182]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label2:theme_override_constants/outline_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [23]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:theme_override_constants/outline_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [25]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PointLight2D:energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.42]
+}
+
+[sub_resource type="Animation" id="Animation_52fjx"]
+resource_name = "aumentar_tamaño_label"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [21, 216]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label2:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [38, 182]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label2:theme_override_constants/outline_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6, 23]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:theme_override_constants/outline_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5, 25]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PointLight2D:energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.42]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y2ug6"]
+_data = {
+&"RESET": SubResource("Animation_i11wh"),
+&"aumentar_tamaño_label": SubResource("Animation_52fjx")
+}
 
 [node name="WinScreen" type="Control" unique_id=891081462]
 layout_mode = 3
@@ -11,32 +145,67 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ooww")
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=113982891]
+position = Vector2(911, 305)
+scale = Vector2(0.5181306, 0.5181306)
+energy = 3.42
+texture = ExtResource("2_negw0")
+texture_scale = 23.39
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=355116071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_k4uac")
+stretch_mode = 1
+
 [node name="Label" type="Label" parent="." unique_id=191944847]
+light_mask = 2
 layout_mode = 0
 offset_left = 279.0
 offset_top = 24.0
 offset_right = 1664.0
 offset_bottom = 319.0
+theme_override_colors/font_color = Color(0.79607844, 0.94509804, 1, 1)
+theme_override_colors/font_outline_color = Color(0.80784315, 0.5176471, 1, 1)
+theme_override_constants/outline_size = 25
 theme_override_font_sizes/font_size = 216
 text = "¡ATIPT´TAWA!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1440252559]
+light_mask = 2
 layout_mode = 0
 offset_left = 528.0
 offset_top = 310.0
 offset_right = 1369.0
 offset_bottom = 559.0
+theme_override_colors/font_color = Color(0.79607844, 0.94509804, 1, 1)
+theme_override_colors/font_outline_color = Color(0.80784315, 0.5176471, 1, 1)
+theme_override_constants/outline_size = 23
 theme_override_font_sizes/font_size = 182
 text = "¡Venciste!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=1073184936]
+light_mask = 2
 layout_mode = 0
-offset_left = 534.0
-offset_top = 701.0
-offset_right = 1289.0
-offset_bottom = 856.0
+offset_left = 556.0
+offset_top = 778.0
+offset_right = 1311.0
+offset_bottom = 933.0
 theme_override_font_sizes/font_size = 107
 text = "siguiente nivel
 "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=942064015]
+root_node = NodePath("../Label")
+libraries/ = SubResource("AnimationLibrary_y2ug6")
+autoplay = &"aumentar_tamaño_label"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
