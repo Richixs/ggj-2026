@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://d0ldv8xyync48"]
+
+[ext_resource type="Script" uid="uid://dvcd36wei1ypq" path="res://src/entity/active-entitie/entities/FireMob.gd" id="1_fpqjs"]
+[ext_resource type="Texture2D" uid="uid://b7v8juxtax4ls" path="res://assets/entities/active-entities/fire-mob/ENEMIGO DE FUEGO1.png" id="1_wqn2r"]
+[ext_resource type="Texture2D" uid="uid://bdm2xpys81b53" path="res://assets/entities/active-entities/fire-mob/ENEMIGO DE FUEGO2.png" id="2_fpqjs"]
+[ext_resource type="Texture2D" uid="uid://bhfp0dnrk1au" path="res://assets/entities/active-entities/fire-mob/ENEMIGO DE FUEGO3.png" id="3_aidql"]
+[ext_resource type="Script" uid="uid://lf17lkdjf8wx" path="res://src/entity/components/health/HealthComponent.gd" id="5_xsu26"]
+[ext_resource type="Script" uid="uid://c51h00gl0vg4j" path="res://src/entity/components/health/HealthData.gd" id="6_j1eed"]
+[ext_resource type="Script" uid="uid://sq7icbk62qb" path="res://src/entity/active-entitie/ActiveEntity.gd" id="7_j1eed"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsu26"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wqn2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fpqjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aidql")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wqn2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fpqjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aidql")
+}],
+"loop": true,
+"name": &"run",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1eed"]
+size = Vector2(86.75, 103.6875)
+
+[sub_resource type="Resource" id="Resource_rcgxs"]
+script = ExtResource("6_j1eed")
+metadata/_custom_type_script = "uid://c51h00gl0vg4j"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xsu26"]
+
+[node name="FireMob" type="CharacterBody2D" unique_id=908736681]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_fpqjs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1967949741]
+position = Vector2(4.7683716e-07, -1.9073486e-06)
+scale = Vector2(0.23388672, 0.23388672)
+sprite_frames = SubResource("SpriteFrames_xsu26")
+animation = &"IDLE"
+frame_progress = 0.38597596
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=985069634]
+position = Vector2(0.625, 36.15625)
+shape = SubResource("RectangleShape2D_j1eed")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1707658662]
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1703247957]
+script = ExtResource("5_xsu26")
+data = SubResource("Resource_rcgxs")
+metadata/_custom_type_script = "uid://lf17lkdjf8wx"
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=1824556669]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectionZone" unique_id=1716236059]
+shape = SubResource("CircleShape2D_xsu26")
+
+[node name="ActiveEntity" type="Node" parent="." unique_id=793663158]
+script = ExtResource("7_j1eed")
+metadata/_custom_type_script = "uid://sq7icbk62qb"

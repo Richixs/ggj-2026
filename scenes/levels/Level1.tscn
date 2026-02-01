@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://lnmraniubi2l" path="res://scenes/passive-entities/burrow/Burrow.tscn" id="1_x4si1"]
 [ext_resource type="PackedScene" uid="uid://btb8fjov6wp1o" path="res://scenes/player/Player.tscn" id="2_fh0io"]
 [ext_resource type="Texture2D" uid="uid://bv1wpaapyneq1" path="res://assets/world/TILEMAPPASTOCOMPLETO.png" id="4_fh0io"]
+[ext_resource type="PackedScene" uid="uid://d0ldv8xyync48" path="res://scenes/active-entities/fire-mob/FireMob.tscn" id="5_68ib6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4si1"]
 size = Vector2(3840, 20)
@@ -28,7 +29,6 @@ scale = Vector2(1, 1.0308831)
 
 [node name="Player" parent="." unique_id=1528831046 instance=ExtResource("2_fh0io")]
 position = Vector2(1, 292)
-speed = 750.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=590824340]
 position = Vector2(0, 1080)
@@ -53,3 +53,6 @@ position = Vector2(-1920, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=233378110]
 shape = SubResource("RectangleShape2D_fh0io")
+
+[node name="FireMob" parent="." unique_id=908736681 instance=ExtResource("5_68ib6")]
+position = Vector2(1519, 835)

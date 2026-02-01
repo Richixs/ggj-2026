@@ -34,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_524rm"]
-size = Vector2(12.571833, 4.7774878)
+size = Vector2(12.571833, 6.969898)
 
 [sub_resource type="Resource" id="Resource_c3xxp"]
 script = ExtResource("4_tpg5x")
@@ -51,7 +51,7 @@ animation = &"run"
 frame_progress = 0.53587985
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1553075673]
-position = Vector2(-36, 84.00001)
+position = Vector2(-36, 52)
 scale = Vector2(14.476807, 7.6399984)
 shape = SubResource("RectangleShape2D_524rm")
 
