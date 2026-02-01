@@ -21,9 +21,18 @@ alignment = 1
 [node name="PanelLifes" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=1212105766]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 61
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=294558266]
+layout_mode = 2
+texture = ExtResource("1_a38ob")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=906717240]
+layout_mode = 2
+texture = ExtResource("1_a38ob")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HBoxContainer/PanelLifes" unique_id=1751140893]
 layout_mode = 2
 texture = ExtResource("1_a38ob")
 
@@ -37,8 +46,8 @@ layout_mode = 2
 texture = ExtResource("1_a38ob")
 
 [node name="PanelTimer" type="Panel" parent="Control/HBoxContainer" unique_id=1610913487]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/PanelTimer" unique_id=673517523]
 layout_mode = 0
