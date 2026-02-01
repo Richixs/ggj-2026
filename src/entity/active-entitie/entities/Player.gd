@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-@onready var entity := $Entity
 @onready var movement := $ActiveEntity
 @onready var anim := $AnimatedSprite2D
 @onready var attack_hitbox := $HitboxComponent
