@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://d0ko6d1x7vcsb"]
+
+[ext_resource type="FontFile" uid="uid://dvrbflirrovgc" path="res://assets/fonts/Lacquer/Lacquer-Regular.ttf" id="1_v1vmc"]
+
+[resource]
+Label/colors/font_color = Color(1, 0.003921569, 0.019607844, 1)
+Label/fonts/font = ExtResource("1_v1vmc")

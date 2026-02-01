@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b7r475auksi21"]
 
 [ext_resource type="Script" uid="uid://42vxa2hqaytu" path="res://src/pantallas_finales/derrota/derrota.gd" id="1_gpglj"]
+[ext_resource type="Theme" uid="uid://d0ko6d1x7vcsb" path="res://src/pantallas_finales/derrota/theme_derrota/Derrota.tres" id="1_r2vq7"]
+[ext_resource type="Texture2D" uid="uid://bpwkfofrw60km" path="res://assets/pantallas_finales/derrota/Captura_de_pantalla_2026-02-01_104510-removebg-preview.png" id="2_2bcv0"]
 
 [node name="Derrota" type="Control" unique_id=192682270]
 layout_mode = 3
@@ -9,24 +11,75 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_r2vq7")
 script = ExtResource("1_gpglj")
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=1577946598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=1796587001]
 layout_mode = 0
-offset_left = 501.0
-offset_top = 174.0
-offset_right = 1313.0
-offset_bottom = 469.0
+offset_left = 219.0
+offset_top = 21.0
+offset_right = 1679.0
+offset_bottom = 316.0
 theme_override_font_sizes/font_size = 216
-text = "Derrota"
+text = "¡JIWARAYAÑA!"
+
+[node name="Label2" type="Label" parent="." unique_id=1969832048]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 303.0
+offset_right = 1253.0
+offset_bottom = 489.0
+theme_override_font_sizes/font_size = 136
+text = "¡EXTINCIÓN!"
+
+[node name="Label3" type="Label" parent="." unique_id=1208775426]
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 883.0
+offset_right = 1873.0
+offset_bottom = 1058.0
+theme_override_font_sizes/font_size = 128
+text = "¡Es tu culpa!"
 
 [node name="Button" type="Button" parent="." unique_id=391836096]
 layout_mode = 0
-offset_left = 602.0
-offset_top = 554.0
-offset_right = 1208.0
-offset_bottom = 857.0
-theme_override_font_sizes/font_size = 216
-text = "Menu"
+offset_left = 731.0
+offset_top = 578.0
+offset_right = 1099.0
+offset_bottom = 764.0
+theme_override_font_sizes/font_size = 130
+text = "Menú"
+
+[node name="CapturaDePantalla20260201104510RemovebgPreview" type="Sprite2D" parent="." unique_id=1908067899]
+position = Vector2(1519, 605.00006)
+scale = Vector2(1.8715277, 1.8715278)
+texture = ExtResource("2_2bcv0")
+
+[node name="CapturaDePantalla20260201104510RemovebgPreview2" type="Sprite2D" parent="." unique_id=471584419]
+position = Vector2(336, 684)
+scale = Vector2(0.92187494, 0.921875)
+texture = ExtResource("2_2bcv0")
+flip_h = true
+
+[node name="CapturaDePantalla20260201104510RemovebgPreview4" type="Sprite2D" parent="." unique_id=1636270797]
+position = Vector2(476, 867)
+scale = Vector2(0.7222508, 0.722251)
+texture = ExtResource("2_2bcv0")
+flip_h = true
+
+[node name="CapturaDePantalla20260201104510RemovebgPreview3" type="Sprite2D" parent="." unique_id=1984228115]
+position = Vector2(206, 892.00006)
+scale = Vector2(0.8498534, 0.8498535)
+texture = ExtResource("2_2bcv0")
+flip_h = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

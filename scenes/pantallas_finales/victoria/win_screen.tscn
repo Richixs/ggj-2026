@@ -13,20 +13,30 @@ script = ExtResource("1_8ooww")
 
 [node name="Label" type="Label" parent="." unique_id=191944847]
 layout_mode = 0
-offset_left = 252.0
-offset_top = 192.0
-offset_right = 1637.0
-offset_bottom = 487.0
+offset_left = 279.0
+offset_top = 24.0
+offset_right = 1664.0
+offset_bottom = 319.0
 theme_override_font_sizes/font_size = 216
 text = "¡ATIPT´TAWA!"
 
+[node name="Label2" type="Label" parent="." unique_id=1440252559]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 310.0
+offset_right = 1369.0
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 182
+text = "¡Venciste!"
+
 [node name="Button" type="Button" parent="." unique_id=1073184936]
 layout_mode = 0
-offset_left = 573.0
-offset_top = 514.0
-offset_right = 1230.0
-offset_bottom = 817.0
-theme_override_font_sizes/font_size = 216
-text = "MENU"
+offset_left = 534.0
+offset_top = 701.0
+offset_right = 1289.0
+offset_bottom = 856.0
+theme_override_font_sizes/font_size = 107
+text = "siguiente nivel
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
