@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bkdsr7cfw0mxy"]
+
+[ext_resource type="Script" uid="uid://dvrrtespv8bhg" path="res://src/menu/Menu.gd" id="1_kcc1k"]
+
+[node name="Menu" type="Control" unique_id=1544059260]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kcc1k")
+
+[node name="Title" type="Label" parent="." unique_id=910073026]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 213.0
+offset_right = 1889.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 99
+text = "UTHURUNKU: LAS ÚLTIMAS MÁSCARAS"
+
+[node name="Start" type="Button" parent="." unique_id=1350556572]
+layout_mode = 0
+offset_left = 1394.0
+offset_top = 538.0
+offset_right = 1698.0
+offset_bottom = 718.0
+theme_override_font_sizes/font_size = 126
+text = "Start"
+
+[node name="Config" type="Button" parent="." unique_id=431677649]
+layout_mode = 0
+offset_left = 1360.0
+offset_top = 759.0
+offset_right = 1738.0
+offset_bottom = 939.0
+theme_override_font_sizes/font_size = 126
+text = "config"
+
+[node name="Exit" type="Button" parent="." unique_id=1731161306]
+layout_mode = 0
+offset_left = 1683.0
+offset_top = 9.0
+offset_right = 1916.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 126
+text = "Exit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
