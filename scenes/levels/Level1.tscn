@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://btb8fjov6wp1o" path="res://scenes/player/Player.tscn" id="2_fh0io"]
 [ext_resource type="Texture2D" uid="uid://bv1wpaapyneq1" path="res://assets/world/TILEMAPPASTOCOMPLETO.png" id="4_fh0io"]
 [ext_resource type="PackedScene" uid="uid://d0ldv8xyync48" path="res://scenes/active-entities/fire-mob/FireMob.tscn" id="5_68ib6"]
+[ext_resource type="PackedScene" uid="uid://dpt5k4wa8b0a" path="res://scenes/active-entities/mob/Mob.tscn" id="6_mob"]
+[ext_resource type="Script" uid="uid://bw4h8m3p2q5r" path="res://src/levels/EnemySpawner.gd" id="7_spawner"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4si1"]
 size = Vector2(3840, 20)
@@ -32,33 +34,38 @@ position = Vector2(1, 292)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=590824340]
 position = Vector2(0, 1080)
+collision_layer = 1
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=241338988]
 shape = SubResource("RectangleShape2D_x4si1")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=647678293]
 position = Vector2(0, -1080)
+collision_layer = 1
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=934165601]
 shape = SubResource("RectangleShape2D_x4si1")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1146628723]
 position = Vector2(1920, 0)
+collision_layer = 1
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=204221882]
 shape = SubResource("RectangleShape2D_fh0io")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1811936956]
 position = Vector2(-1920, 0)
+collision_layer = 1
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=233378110]
 shape = SubResource("RectangleShape2D_fh0io")
 
-[node name="FireMob" parent="." unique_id=908736681 instance=ExtResource("5_68ib6")]
-position = Vector2(1519, 835)
-
-[node name="FireMob2" parent="." unique_id=1057592967 instance=ExtResource("5_68ib6")]
-position = Vector2(-1200, 500)
-
-[node name="FireMob3" parent="." unique_id=665548201 instance=ExtResource("5_68ib6")]
-position = Vector2(800, -700)
+[node name="EnemySpawner" type="Node" parent="."]script = ExtResource("7_spawner")
+fire_mob_scene = ExtResource("5_68ib6")
+mob_scene = ExtResource("6_mob")
+spawn_interval = 3.0
+max_enemies = 8

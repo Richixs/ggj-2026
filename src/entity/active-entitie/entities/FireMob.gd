@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name FireMob
 
-@onready var entity := $Entity
 @onready var movement := $ActiveEntity
 @onready var anim := $AnimatedSprite2D
 
@@ -9,6 +8,9 @@ class_name FireMob
 @export var stop_threshold: float = 10.0
 
 var chase_target: CharacterBody2D = null
+
+func _ready():
+	add_to_group("enemy")
 
 func _physics_process(_delta):
 	var direction := Vector2.ZERO
