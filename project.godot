@@ -10,7 +10,12 @@ config_version=5
 
 [application]
 
-config/name="ggj-2026"
+config/name="UTHURUNKU: las últimas máscaras"
+config/description="UTHURUNKU: Las Últimas Máscaras es un Horde Survival de acción top-down donde encarnas a una madre jaguar, elegida como avatar de los antiguos dioses de Tiwanaku, para enfrentar el fuego que amenaza con devorar la selva.
+Sobrevive a oleadas de humo (JIQ’I) y fuego (NINA) usando el poder de tres máscaras sagradas, cada una con habilidades elementales únicas: lluvia que apaga las llamas, raíces que devuelven la vida a la tierra y rayos que crean un escudo protector.
+Con un estilo 2D dibujado a mano y una fuerte inspiración en la cosmovisión andina, el juego mezcla acción intensa, decisiones rápidas y un mensaje claro:
+proteger la naturaleza o enfrentar la extinción."
+config/version="1"
 run/main_scene="uid://ctuqr3ktcb2o8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -91,3 +96,4 @@ Hability={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
