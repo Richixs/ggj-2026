@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://ctuqr3ktcb2o8"]
 
+[ext_resource type="PackedScene" uid="uid://bsht067kwkuni" path="res://scenes/Menu/menu.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://b1dlqweqgaxs8" path="res://scenes/levels/Level1.tscn" id="2_rvslj"]
+
 [node name="Main" type="Node2D" unique_id=1941038791]
+
+[node name="Menu" parent="." unique_id=1544059260 instance=ExtResource("1_elqb8")]
+level = ExtResource("2_rvslj")
