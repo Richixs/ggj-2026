@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bheiw6kul2lec"]
 
 [ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="1_a38ob"]
+[ext_resource type="Script" uid="uid://bhpwp4rlhd7gb" path="res://src/gui/fade.gd" id="2_phmh7"]
 
 [sub_resource type="Animation" id="Animation_a38ob"]
 length = 0.001
@@ -109,12 +110,14 @@ theme_override_font_sizes/font_size = 126
 text = "90"
 
 [node name="Fade" type="Control" parent="." unique_id=895735110]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_phmh7")
 
 [node name="ColorRect" type="ColorRect" parent="Fade" unique_id=984322365]
 layout_mode = 1
@@ -127,3 +130,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fade" unique_id=792012243]
 libraries/ = SubResource("AnimationLibrary_psgnt")
+
+[connection signal="animation_finished" from="Fade/AnimationPlayer" to="Fade" method="_on_animation_player_animation_finished"]
