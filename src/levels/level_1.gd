@@ -6,6 +6,7 @@ extends Node2D
 var arboles :Array[Node2D]= []
 var random := RandomNumberGenerator.new()
 var tree = preload("res://scenes/passive-entities/tree/tree.tscn")
+var fire_sound = preload("res://assets/Audio/fire.ogg")
 
 func create_tree(position:Vector2):
 	var tree_instance :Node2D= tree.instantiate()
@@ -16,6 +17,14 @@ func create_tree(position:Vector2):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var audio_player = AudioStreamPlayer.new()
+	audio_player.stream = fire_sound
+	audio_player.bus = "SFX"
+	add_child(audio_player)
+	audio_player.play()
+	# Ensure looping using signal if the stream itself isn't set to loop
+	audio_player.finished.connect(func(): audio_player.play())
+
 	random.randomize()
 	var i = 0
 	while i < cantidad_arboles:
