@@ -8,7 +8,7 @@ func receive_damage(amount: int, attacker: Node = null) -> void:
 		health_component.take_damage(amount)
 		
 		# Si el que recibe daño es el Player, el atacante muere
-		if get_parent() is Player and attacker != null:
+		if get_parent().is_in_group("player") and attacker != null:
 			if attacker.has_node("HealthComponent"):
 				var attacker_health = attacker.get_node("HealthComponent")
 				print("%s contraatacó y mató a %s" % [get_parent().name, attacker.name])

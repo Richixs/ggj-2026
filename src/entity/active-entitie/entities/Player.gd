@@ -8,11 +8,20 @@ class_name Player
 @onready var attack_visual := $HitboxComponent/AttackVisual
 @onready var health_component := $HealthComponent
 
+var attack_sound = preload("res://assets/Audio/atack-jaguar.ogg")
+var audio_player: AudioStreamPlayer
+
 var is_attacking := false
 var attack_offset_left := Vector2(-300, 0)
 var attack_offset_right := Vector2(300, 0)
 
 func _ready():
+	add_to_group("player")
+	audio_player = AudioStreamPlayer.new()
+	audio_player.stream = attack_sound
+	audio_player.bus = "SFX" # Use the SFX bus for sound effects
+	add_child(audio_player)
+
 	attack_visual.visible = false
 	if health_component:
 		health_component.died.connect(_on_died)
@@ -52,6 +61,8 @@ func perform_attack():
 	is_attacking = true
 	attack_hitbox.monitoring = true
 	print("Player atacó!")
+	if audio_player:
+		audio_player.play()
 	attack_timer.start()
 
 func update_attack_position():
